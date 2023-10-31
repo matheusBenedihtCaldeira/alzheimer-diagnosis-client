@@ -26,6 +26,9 @@ export default function Header() {
             <Link href="/">Register Patient</Link>
           </li>
           <li className="my-7 md:my-0 md:ml-8 hover:text-zinc-300">
+            <Link href="/">Patient History</Link>
+          </li>
+          <li className="my-7 md:my-0 md:ml-8 hover:text-zinc-300">
             <Link href="/">Diagnosis</Link>
           </li>
           <li className="my-7 md:my-0 md:ml-8 hover:text-zinc-300">
