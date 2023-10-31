@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { UserIcon } from "@heroicons/react/24/solid";
+import Link from 'next/link';
+import { UserIcon } from '@heroicons/react/24/solid';
 export default function Header() {
   return (
     <div className="shadow-md w-full bg-sky-800 text-white">
