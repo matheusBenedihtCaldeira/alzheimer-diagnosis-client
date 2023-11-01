@@ -53,33 +53,39 @@ export default function Header() {
                 <Popover.Panel className="absolute left-1/2 z-10 mt-5 pe-14 flex w-auto max-w-max -translate-x-1/2 px-4 ">
                   <div className="w-64 max-w-md flex-auto overflow-hidden rounded-3xl text-sm shadow-lg ring-1 bg-zinc-600 ring-gray-900/5">
                     <div className="p-4">
-                      <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
-                        <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
-                          <UserPlusIcon className="h-8 w-8 flex-none  fill-slate-50" />
+                      <Link href="register/patient">
+                        <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
+                          <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
+                            <UserPlusIcon className="h-8 w-8 flex-none  fill-slate-50" />
+                          </div>
+                          <div>
+                            <p>Register Patient</p>
+                            <span className="absolute inset-0" />
+                          </div>
                         </div>
-                        <div>
-                          <p>Register Patient</p>
-                          <span className="absolute inset-0" />
+                      </Link>
+                      <Link href="/">
+                        <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
+                          <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
+                            <UsersIcon className="h-8 w-8 flex-none  fill-slate-50" />
+                          </div>
+                          <div>
+                            <p>Patient History</p>
+                            <span className="absolute inset-0" />
+                          </div>
                         </div>
-                      </div>
-                      <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
-                        <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
-                          <UsersIcon className="h-8 w-8 flex-none  fill-slate-50" />
+                      </Link>
+                      <Link href="/">
+                        <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
+                          <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
+                            <BeakerIcon className="h-8 w-8 flex-none  fill-slate-50" />
+                          </div>
+                          <div>
+                            <p>Diagnosis</p>
+                            <span className="absolute inset-0" />
+                          </div>
                         </div>
-                        <div>
-                          <p>Patient History</p>
-                          <span className="absolute inset-0" />
-                        </div>
-                      </div>
-                      <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
-                        <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
-                          <BeakerIcon className="h-8 w-8 flex-none  fill-slate-50" />
-                        </div>
-                        <div>
-                          <p>Diagnosis</p>
-                          <span className="absolute inset-0" />
-                        </div>
-                      </div>
+                      </Link>
                     </div>
                   </div>
                 </Popover.Panel>
