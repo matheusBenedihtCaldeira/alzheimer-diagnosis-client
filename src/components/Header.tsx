@@ -53,7 +53,7 @@ export default function Header() {
                 <Popover.Panel className="absolute left-1/2 z-10 mt-5 pe-14 flex w-auto max-w-max -translate-x-1/2 px-4 ">
                   <div className="w-64 max-w-md flex-auto overflow-hidden rounded-3xl text-sm shadow-lg ring-1 bg-zinc-600 ring-gray-900/5">
                     <div className="p-4">
-                      <Link href="register/patient">
+                      <Link href="/register/patient">
                         <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
                           <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
                             <UserPlusIcon className="h-8 w-8 flex-none  fill-slate-50" />
@@ -64,7 +64,7 @@ export default function Header() {
                           </div>
                         </div>
                       </Link>
-                      <Link href="/">
+                      <Link href="/patient/history">
                         <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
                           <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
                             <UsersIcon className="h-8 w-8 flex-none  fill-slate-50" />

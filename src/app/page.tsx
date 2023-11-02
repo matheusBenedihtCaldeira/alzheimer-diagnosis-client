@@ -25,7 +25,7 @@ export default function Home() {
             <article className="flex max-w-xl flex-col items-start justify-between">
               <div className="group relative">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                  <Link href="#">
+                  <Link href="/register/patient">
                     <span className="absolute inset-0"></span>
                     Patient Registration
                   </Link>
@@ -55,7 +55,7 @@ export default function Home() {
             <article className="flex max-w-xl flex-col items-start justify-between">
               <div className="group relative">
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
-                  <Link href="#">
+                  <Link href="/patient/history">
                     <span className="absolute inset-0"></span>
                     Patient History
                   </Link>
