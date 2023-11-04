@@ -75,7 +75,7 @@ export default function Header() {
                           </div>
                         </div>
                       </Link>
-                      <Link href="/">
+                      <Link href="/patient/diagnosis">
                         <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
                           <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
                             <BeakerIcon className="h-8 w-8 flex-none  fill-slate-50" />
