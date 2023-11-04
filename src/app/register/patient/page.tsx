@@ -9,8 +9,8 @@ export default function registerPatient() {
       <Header />
       <form>
         <div className="space-y-12 m-20">
-          <h2 className="text-base font-semiobld leading-7 text-gray-900">
-            Patient Information
+          <h2 className="text-xl font-semiobld leading-7 text-gray-900">
+            Patient Registration
           </h2>
           <p className="mt-1 text-sm leading-6 text-gray-600">
             Provide the patient's data to register.
