@@ -15,10 +15,12 @@ export default function Home() {
               Machine Learning Brain Health Tool
             </p>
             <p className="mt-3 text-lg leading-8 text-gray-600 border-t border-gray-200">
-              With NeuroAI, we are committed to helping doctors and patients
-              address their brain health in a proactive and informed way. Early
-              detection of Alzheimer's can make a significant difference, and we
-              are here to provide the tools you need for that journey.
+              NeuroAI, our mission is to provide valuable assistance to doctors
+              in diagnosing Alzheimer's, offering support in decision making. We
+              recognize the importance of diagnosing Alzheimer's disease and are
+              here to provide the tools you need to begin and navigate this
+              crucial journey with confidence. With NeuroAI, we are bringing
+              hope, precision and care to brain health diagnosis
             </p>
           </div>
           <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8  border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -45,10 +47,9 @@ export default function Home() {
                   </Link>
                 </h3>
                 <p className="mt-5 text-sm leading-6 text-gray-600">
-                  Using a Naive Bayes machine learning model, we perform a
-                  personalized risk analysis for each patient. We evaluate
+                  Using a Naive Bayes machine learning model, we evaluated
                   multiple factors to identify potential indicators of
-                  Alzheimer's.
+                  Alzheimer's, assisting in the diagnostic process.
                 </p>
               </div>
             </article>
