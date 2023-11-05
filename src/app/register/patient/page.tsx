@@ -22,14 +22,15 @@ export default function registerPatient() {
                 htmlFor="full-name"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
-                Full name
+                Name
               </label>
               <div className="mt-2">
                 <input
                   type="text"
+                  placeholder="Full Name"
                   name="name"
                   id="name"
-                  className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
+                  className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5"
                   required
                 />
               </div>
@@ -45,6 +46,7 @@ export default function registerPatient() {
               <div className="mt-2">
                 <IMaskInput
                   mask="000.000.000-00"
+                  placeholder="000.000.000-00"
                   type="text"
                   name="cpf"
                   id="cpf"
@@ -96,7 +98,7 @@ export default function registerPatient() {
           <div className="mt-6 flex items-center justify-center gap-x-6">
             <button
               type="submit"
-              className="rounded-md bg-sky-800 px-20 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
+              className="rounded-md bg-sky-800 px-20 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 transition duration-300 ease-out md:ease-in"
             >
               Register
             </button>

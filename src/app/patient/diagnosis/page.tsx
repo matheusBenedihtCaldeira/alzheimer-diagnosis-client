@@ -13,6 +13,25 @@ export default function diagnosis() {
             This form assists in the assessment and diagnosis of Alzheimer's.
           </p>
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            {/*Patiet Id*/}
+            <div className="sm:col-span-3">
+              <label
+                htmlFor="agepatient-id"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Patient ID
+              </label>
+              <div className="mt-2">
+                <input
+                  type="number"
+                  name="patient-id"
+                  id="patient-id"
+                  className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
+                  min="0"
+                  required
+                />
+              </div>
+            </div>
             {/*Sex*/}
             <div className="sm:col-span-3">
               <label
@@ -23,9 +42,9 @@ export default function diagnosis() {
               </label>
               <div className="mt-2">
                 <select
-                  id="country"
-                  name="country"
-                  autoComplete="country-name"
+                  id="sex"
+                  name="sex"
+                  autoComplete="sex"
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5"
                 >
                   <option>Default</option>
@@ -201,7 +220,7 @@ export default function diagnosis() {
           <div className="mt-6 flex items-center justify-center gap-x-6">
             <button
               type="submit"
-              className="rounded-md bg-sky-800 px-20 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
+              className="rounded-md bg-sky-800 px-20 py-2 text-sm font-semibold text-white shadow-sm hover:bg-sky-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700 transition duration-300 ease-out md:ease-in"
             >
               Send
             </button>

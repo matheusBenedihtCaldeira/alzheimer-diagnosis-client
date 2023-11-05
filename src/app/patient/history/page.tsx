@@ -19,8 +19,11 @@ export default function patientHistory() {
           <li className="flex justify-between gap-x-6 p-5 mb-7 shadow-lg bg-slate-200 rounded-md shadow-md w-full">
             <div className="min-w-0 flex-auto">
               <Link href="#" className="text-base font-semibold leading-6">
-                Patient Name
+                Calabreso
               </Link>
+              <p className="text-sm">
+                Patient ID: <span className="text-zinc-600">2</span>
+              </p>
               <p className="text-sm">
                 Diagnosis: <span className="text-zinc-600">non demented</span>
               </p>

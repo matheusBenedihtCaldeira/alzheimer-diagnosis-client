@@ -17,7 +17,7 @@ export default function Header() {
         <div className="flex flex-row cursor-pointer">
           <div>
             <img
-              className="mx-auto h-10 w-auto"
+              className="mx-auto h-10 w-auto "
               src="https://img.icons8.com/ios/50/artificial-intelligence.png"
               alt="artificial-intelligence"
             />
@@ -54,7 +54,7 @@ export default function Header() {
                   <div className="w-64 max-w-md flex-auto overflow-hidden rounded-3xl text-sm shadow-lg ring-1 bg-zinc-600 ring-gray-900/5">
                     <div className="p-4">
                       <Link href="/register/patient">
-                        <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
+                        <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer transition duration-300 ease-out md:ease-in">
                           <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
                             <UserPlusIcon className="h-8 w-8 flex-none  fill-slate-50" />
                           </div>
@@ -65,7 +65,7 @@ export default function Header() {
                         </div>
                       </Link>
                       <Link href="/patient/history">
-                        <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
+                        <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer transition duration-300 ease-out md:ease-in">
                           <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
                             <UsersIcon className="h-8 w-8 flex-none  fill-slate-50" />
                           </div>
@@ -76,7 +76,7 @@ export default function Header() {
                         </div>
                       </Link>
                       <Link href="/patient/diagnosis">
-                        <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer">
+                        <div className="group relative flex gap-x-4 rounded-lg p-4  hover:bg-zinc-500 cursor-pointer transition duration-300 ease-out md:ease-in">
                           <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg ">
                             <BeakerIcon className="h-8 w-8 flex-none  fill-slate-50" />
                           </div>
