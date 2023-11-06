@@ -1,13 +1,35 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 import Header from '@/components/Header';
+import axios from '@/services/axios';
+import { useState } from 'react';
 import { IMaskInput } from 'react-imask';
 
 export default function registerPatient() {
+  const [name, setName] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [dateOfBirth, setDateOfBirth] = useState('');
+  const [gender, setSex] = useState('');
+
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    console.log(dateOfBirth);
+    try {
+      const { data } = await axios.post('/api/register/patient', {
+        name,
+        cpf,
+        dateOfBirth,
+        gender,
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <>
       <Header />
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="space-y-12 m-20">
           <h2 className="text-xl font-semiobld leading-7 text-gray-900">
             Patient Registration
@@ -29,6 +51,8 @@ export default function registerPatient() {
                   type="text"
                   placeholder="Full Name"
                   name="name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   id="name"
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5"
                   required
@@ -50,6 +74,8 @@ export default function registerPatient() {
                   type="text"
                   name="cpf"
                   id="cpf"
+                  value={cpf}
+                  onChange={(e) => setCpf(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
                   required
                 />
@@ -68,6 +94,8 @@ export default function registerPatient() {
                   type="date"
                   name="data-of-birth"
                   id="data-of-birth"
+                  value={dateOfBirth}
+                  onChange={(e) => setDateOfBirth(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
                   required
                 />
@@ -85,12 +113,14 @@ export default function registerPatient() {
                 <select
                   id="country"
                   name="country"
+                  value={gender}
+                  onChange={(e) => setSex(e.target.value)}
                   autoComplete="country-name"
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5"
                 >
                   <option>Default</option>
-                  <option>Feminine</option>
-                  <option>Masculine</option>
+                  <option value="F">Feminine</option>
+                  <option value="M">Masculine</option>
                 </select>
               </div>
             </div>
