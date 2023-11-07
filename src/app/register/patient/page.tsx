@@ -2,10 +2,12 @@
 'use client';
 import Header from '@/components/Header';
 import axios from '@/services/axios';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { IMaskInput } from 'react-imask';
 
 export default function registerPatient() {
+  const router = useRouter();
   const [name, setName] = useState('');
   const [cpf, setCpf] = useState('');
   const [dateOfBirth, setDateOfBirth] = useState('');
@@ -13,7 +15,6 @@ export default function registerPatient() {
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log(dateOfBirth);
     try {
       const { data } = await axios.post('/api/register/patient', {
         name,
@@ -21,6 +22,7 @@ export default function registerPatient() {
         dateOfBirth,
         gender,
       });
+      router.push('http://localhost:3000/patient/history');
     } catch (e) {
       console.log(e);
     }

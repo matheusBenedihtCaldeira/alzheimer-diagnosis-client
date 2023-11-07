@@ -1,10 +1,47 @@
+'use client';
 import Header from '@/components/Header';
+import axios from '@/services/axios';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
 
 export default function diagnosis() {
+  const router = useRouter();
+  const [patientId, setPatientId] = useState('');
+  const [sex, setSex] = useState('');
+  const [age_n, setAge_n] = useState('');
+  const [educ_n, setEduc_n] = useState('');
+  const [ses_n, setSes_n] = useState('');
+  const [mmse_n, setMMSE_n] = useState('');
+  const [cdr_n, setCdr_n] = useState('');
+  const [etiv_n, setEtiv_n] = useState('');
+  const [nwbv_n, setNwbv_n] = useState('');
+  const [asf_n, setAsf_n] = useState('');
+
+  const handleSubmit = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    try {
+      parseInt(sex);
+      const { data } = await axios.post(`/api/patient/diagnosis/${patientId}`, {
+        sex,
+        age_n,
+        educ_n,
+        ses_n,
+        mmse_n,
+        cdr_n,
+        etiv_n,
+        nwbv_n,
+        asf_n,
+      });
+      router.push('http://localhost:3000/patient/history');
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   return (
     <>
       <Header />
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="space-y-12 m-20">
           <h2 className="text-xl font-semiobld leading-7 text-gray-900">
             Clinical Data Form for Alzheimer's Diagnosis
@@ -26,6 +63,8 @@ export default function diagnosis() {
                   type="number"
                   name="patient-id"
                   id="patient-id"
+                  value={patientId}
+                  onChange={(e) => setPatientId(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
                   min="0"
                   required
@@ -45,11 +84,13 @@ export default function diagnosis() {
                   id="sex"
                   name="sex"
                   autoComplete="sex"
+                  value={sex}
+                  onChange={(e) => setSex(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5"
                 >
                   <option>Default</option>
-                  <option>Feminine</option>
-                  <option>Masculine</option>
+                  <option value="0">Feminine</option>
+                  <option value="1">Masculine</option>
                 </select>
               </div>
             </div>
@@ -66,6 +107,8 @@ export default function diagnosis() {
                   type="number"
                   name="age"
                   id="age"
+                  value={age_n}
+                  onChange={(e) => setAge_n(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
                   min="0"
                   max="120"
@@ -86,6 +129,8 @@ export default function diagnosis() {
                   type="number"
                   name="educ"
                   id="educ"
+                  value={educ_n}
+                  onChange={(e) => setEduc_n(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
                   min="0"
                   max="120"
@@ -106,6 +151,8 @@ export default function diagnosis() {
                   type="number"
                   name="ses"
                   id="ses"
+                  value={ses_n}
+                  onChange={(e) => setSes_n(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
                   min="0"
                   max="120"
@@ -126,6 +173,8 @@ export default function diagnosis() {
                   type="number"
                   name="mmse"
                   id="mmse"
+                  value={mmse_n}
+                  onChange={(e) => setMMSE_n(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
                   min="0"
                   max="120"
@@ -146,8 +195,10 @@ export default function diagnosis() {
                   type="number"
                   name="cdr"
                   id="cdr"
+                  value={cdr_n}
+                  onChange={(e) => setCdr_n(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
-                  step="0.01"
+                  step="any"
                   min="0.00"
                   max="9000.00"
                   required
@@ -167,6 +218,8 @@ export default function diagnosis() {
                   type="number"
                   name="etiv"
                   id="etiv"
+                  value={etiv_n}
+                  onChange={(e) => setEtiv_n(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
                   min="0"
                   max="10000"
@@ -187,8 +240,10 @@ export default function diagnosis() {
                   type="number"
                   name="nwbv"
                   id="nwbv"
+                  value={nwbv_n}
+                  onChange={(e) => setNwbv_n(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
-                  step="0.01"
+                  step="any"
                   min="0.00"
                   max="9000.00"
                   required
@@ -208,8 +263,10 @@ export default function diagnosis() {
                   type="number"
                   name="asf"
                   id="asf"
+                  value={asf_n}
+                  onChange={(e) => setAsf_n(e.target.value)}
                   className="border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5 "
-                  step="0.01"
+                  step="any"
                   min="0.00"
                   max="9000.00"
                   required

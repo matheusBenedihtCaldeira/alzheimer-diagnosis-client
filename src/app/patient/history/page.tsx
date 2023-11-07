@@ -1,11 +1,11 @@
 'use client';
+
 import Header from '@/components/Header';
 import axios from '@/services/axios';
 import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-
 type PatientProps = {
   id: number;
   name: string;
@@ -13,10 +13,20 @@ type PatientProps = {
 };
 
 export default function patientHistory() {
+  const router = useRouter();
   const [patients, setPatients] = useState<PatientProps[]>([]);
 
   const [name, setName] = useState('');
   const [diagnosis, setDiagnosis] = useState('');
+
+  const handleDelete = async (id: any) => {
+    try {
+      await axios.delete(`/api/delete/patient/${id}`);
+      router.refresh();
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   useEffect(() => {
     try {
@@ -65,7 +75,10 @@ export default function patientHistory() {
                 <p className="h-6 w-6 cursor-pointer transition duration-250 ease-out md:ease-in text-neutral-600 hover:text-blue-700">
                   <PencilSquareIcon />
                 </p>
-                <button className="h-6 w-6 cursor-pointer transition duration-250 ease-out md:ease-in text-neutral-600 hover:text-red-600">
+                <button
+                  className="h-6 w-6 cursor-pointer transition duration-250 ease-out md:ease-in text-neutral-600 hover:text-red-600"
+                  onClick={() => handleDelete(patient.id)}
+                >
                   <TrashIcon />
                 </button>
               </div>
