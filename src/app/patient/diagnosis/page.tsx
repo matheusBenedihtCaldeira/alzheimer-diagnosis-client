@@ -21,6 +21,7 @@ export default function diagnosis() {
     e.preventDefault();
     try {
       parseInt(sex);
+
       const { data } = await axios.post(`/api/patient/diagnosis/${patientId}`, {
         sex,
         age_n,

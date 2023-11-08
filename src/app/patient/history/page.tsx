@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import axios from '@/services/axios';
 import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
+
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 type PatientProps = {
@@ -22,10 +23,13 @@ export default function patientHistory() {
   const handleDelete = async (id: any) => {
     try {
       await axios.delete(`/api/delete/patient/${id}`);
-      router.refresh();
     } catch (e) {
       console.log(e);
     }
+  };
+
+  const handlPatientProfile = (id: number) => {
+    router.push(`/patient/history/${id}`);
   };
 
   useEffect(() => {
@@ -44,6 +48,9 @@ export default function patientHistory() {
     <>
       <Header />
       <div className="m-10 pl-2">
+        <h2 className="text-xl pb-5 border-b">Patient History</h2>
+      </div>
+      <div className="m-10 pl-2">
         <Link
           href="/register/patient"
           className="text-white bg-sky-800 rounded-full transition duration-300 ease-out md:ease-in hover:bg-sky-700 p-3 drop-shadow-lg"
@@ -58,17 +65,28 @@ export default function patientHistory() {
               key={patient.id}
               className="flex justify-between gap-x-6 p-5 mb-7 shadow-lg bg-slate-200 rounded-md shadow-md w-full"
             >
-              <div className="min-w-0 flex-auto">
-                <Link href="#" className="text-base font-semibold leading-6">
+              <div className="min-w-0 flex-auto cursor-pointer">
+                <h2
+                  className="text-base font-semibold leading-6"
+                  onClick={() => handlPatientProfile(patient.id)}
+                >
                   {patient.name}
-                </Link>
+                </h2>
                 <p className="text-sm">
                   Patient ID:
                   <span className="text-zinc-600">{patient.id}</span>
                 </p>
                 <p className="text-sm">
                   Diagnosis:
-                  <span className="text-zinc-600">{patient.diagnosis}</span>
+                  <span className="text-zinc-600">
+                    {patient.diagnosis === 'Demented'
+                      ? "Patient diagnosed with Alzheimer's"
+                      : patient.diagnosis === 'Nondemented'
+                      ? "Patient not diagnosed with Alzheimer's"
+                      : patient.diagnosis === 'Converted'
+                      ? 'Patient converted'
+                      : null}
+                  </span>
                 </p>
               </div>
               <div className="hidden shrink-0 sm:flex sm:items-center m-1">

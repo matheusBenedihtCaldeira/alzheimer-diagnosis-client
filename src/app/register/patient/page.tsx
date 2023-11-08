@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import axios from '@/services/axios';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 import { IMaskInput } from 'react-imask';
 
 export default function registerPatient() {
@@ -22,7 +23,7 @@ export default function registerPatient() {
         dateOfBirth,
         gender,
       });
-      router.push('http://localhost:3000/patient/history');
+      router.push('/patient/history');
     } catch (e) {
       console.log(e);
     }

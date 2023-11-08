@@ -43,7 +43,7 @@ export default function Home() {
                 <h3 className="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
                   <Link href="#">
                     <span className="absolute inset-0"></span>
-                    Alzheimer's Risk Analysis
+                    Alzheimer's Diagnosis
                   </Link>
                 </h3>
                 <p className="mt-5 text-sm leading-6 text-gray-600">
