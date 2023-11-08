@@ -23,7 +23,8 @@ export default function registerPatient() {
         dateOfBirth,
         gender,
       });
-      router.push('/patient/history');
+      const id = parseInt(data.id);
+      router.push(`/patient/history/${id}`);
     } catch (e) {
       console.log(e);
     }
