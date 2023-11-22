@@ -1,11 +1,12 @@
-import "../styles/globals.css";
-import { Inter } from "next/font/google";
+import NextAuthSessionProvider from '@/providers/sessionProvider';
+import '../styles/globals.css';
+import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "",
-  description: "",
+  title: '',
+  description: '',
 };
 
 export default function RootLayout({
@@ -15,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-zinc-50 text-zinc-950">{children}</body>
+      <body className="bg-zinc-50 text-zinc-950">
+        <NextAuthSessionProvider>{children}</NextAuthSessionProvider>
+      </body>
     </html>
   );
 }
