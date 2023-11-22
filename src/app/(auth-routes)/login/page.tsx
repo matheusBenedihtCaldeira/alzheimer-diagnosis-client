@@ -29,7 +29,7 @@ export default function login() {
           src="https://img.icons8.com/ios/50/artificial-intelligence.png"
           alt="artificial-intelligence"
         />
-        <h1 className="mt-10 text-center text-xl font-bold leading-9 tracking-tight text-gray-900">
+        <h1 className="mt-10 text-center text-xl font-bold leading-9 tracking-tight text-gray-900 font-normal">
           Sign in to your account
         </h1>
       </div>
@@ -55,6 +55,7 @@ export default function login() {
                 name="email"
                 autoComplete="email"
                 required
+                placeholder="example@email.com"
                 className="border-gray-300 text-gray-900 text-sm rounded-lg focus:rind-1 focus:ring-inset shadow-sm ring-1 ring-inset ring-gray-900 w-full p-2.5"
               />
             </div>
@@ -70,6 +71,7 @@ export default function login() {
               <input
                 type="password"
                 id="password"
+                placeholder="•••••••••••"
                 name="password"
                 autoComplete="password"
                 onChange={(e) => setPassword(e.target.value)}
